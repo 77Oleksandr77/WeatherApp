@@ -204,10 +204,9 @@
                         android:layout_height="5dp" />
 
                     <TextView
-                        :text="Wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:
+                        android:text="Wind"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -251,10 +250,9 @@
                         android:layout_height="5dp" />
 
                     <TextView
-                        :text="Pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:
+                        android:text="Pressure"
                         android:textColor="@color/white"
                         android:textSize="12dp" />
 
@@ -291,10 +289,10 @@
                         android:layout_height="5dp" />
 
                     <TextView
-                        :text="Humidity"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:
+                        android:text="Humidity"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -365,6 +363,4 @@
         android:text="Something went wrong"
         android:textColor="@color/white"
         android:visibility="gone" />
-
-
 </RelativeLayout>

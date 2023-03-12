@@ -13,9 +13,11 @@ import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import com.example.weatherapp.models.Weather
 import com.example.weatherapp.models.WeatherResponse
 import com.example.weatherapp.utils.Constants
 import com.google.android.gms.location.*
@@ -101,6 +103,19 @@ class MainActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val weather = response.body()
                         Toast.makeText(this@MainActivity, "$weather", Toast.LENGTH_LONG).show()
+                        for (i in weather.weather.indices) {
+                            findViewById<TextView>(R.id.text_view_sunset).text = weather.sys.sunset.toString()
+                            findViewById<TextView>(R.id.text_view_sunrise).text = weather.sys.sunrise.toString()
+                            findViewById<TextView>(R.id.text_view_status).text = weather.weather[i].description
+                            findViewById<TextView>(R.id.text_view_address).text = weather.name
+                            findViewById<TextView>(R.id.text_view_address).text = weather.name
+                            findViewById<TextView>(R.id.text_view_temp_max).text = weather.main.temp_max.toString()
+                            findViewById<TextView>(R.id.text_view_temp_min).text = weather.main.temp_max.toString()
+                            findViewById<TextView>(R.id.text_view_temp).text = weather.main.temp.toString()
+                            findViewById<TextView>(R.id.text_view_humidity).text = weather.main.humidity.toString()
+                            findViewById<TextView>(R.id.text_view_pressure).text = weather.main.pressure.toString()
+                            findViewById<TextView>(R.id.text_view_wind).text = weather.wind.speed.toString()
+                        }
                     } else {
                         Toast.makeText(
                             this@MainActivity,
@@ -111,7 +126,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<WeatherResponse>?, t: Throwable?) {
-                    Toast.makeText(this@MainActivity, "${t.toString()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, t.toString(), Toast.LENGTH_SHORT).show()
                 }
 
             })
