@@ -25,13 +25,15 @@
                 android:id="@+id/text_view_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:textSize="24sp"
-                tools:text="DHAKA, BD" />
+                tools:text="BUCURESTI, BD" />
 
             <TextView
                 android:id="@+id/text_view_updated_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 tools:text="20 April 2012, 20:08 PM" />
         </LinearLayout>
@@ -49,15 +51,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 tools:text="Clear Sky" />
 
             <TextView
-                android:id="@+id/temp"
+                android:id="@+id/text_view_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-thin"
+                android:textColor="@color/white"
                 android:textSize="90sp"
                 tools:text="29°C" />
 
@@ -71,6 +75,7 @@
                     android:id="@+id/text_view_temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     tools:text="Min Temp: 05:05 AM" />
 
                 <Space
@@ -81,6 +86,7 @@
                     android:id="@+id/text_view_temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     tools:text="Max Temp: 05:05 PM" />
             </LinearLayout>
 
@@ -122,13 +128,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        tools:text="Sunrise" />
+                        android:text="Sunrise"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_view_sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="06:40 AM" />
                 </LinearLayout>
@@ -159,13 +167,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        tools:text="Sunset" />
+                        android:text="Sunset"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_view_sunset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="06:40 AM" />
                 </LinearLayout>
@@ -194,15 +204,18 @@
                         android:layout_height="5dp" />
 
                     <TextView
+                        :text="Wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        tools:text="Wind" />
+                        android:
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_view_wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="06:40 AM" />
                 </LinearLayout>
@@ -238,15 +251,18 @@
                         android:layout_height="5dp" />
 
                     <TextView
+                        :text="Pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12dp"
-                        tools:text="Pressure" />
+                        android:
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/text_view_pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="06:40 AM" />
                 </LinearLayout>
@@ -275,15 +291,18 @@
                         android:layout_height="5dp" />
 
                     <TextView
+                        :text="Humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        tools:text="Humidity" />
+                        android:
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_view_humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="06:40 AM" />
                 </LinearLayout>
@@ -314,13 +333,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        tools:text="More info" />
+                        android:text="More info"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_view_about"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         tools:text="Evan" />
                 </LinearLayout>
@@ -342,6 +363,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Something went wrong"
+        android:textColor="@color/white"
         android:visibility="gone" />
 
 

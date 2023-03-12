@@ -100,7 +100,6 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         val weather = response.body()
-                        Log.d("WEATHER", weather.toString())
                         Toast.makeText(this@MainActivity, "$weather", Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(
