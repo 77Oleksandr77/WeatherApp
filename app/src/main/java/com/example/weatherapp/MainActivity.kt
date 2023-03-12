@@ -26,6 +26,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -102,16 +105,15 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         val weather = response.body()
-                        Toast.makeText(this@MainActivity, "$weather", Toast.LENGTH_LONG).show()
                         for (i in weather.weather.indices) {
-                            findViewById<TextView>(R.id.text_view_sunset).text = weather.sys.sunset.toString()
-                            findViewById<TextView>(R.id.text_view_sunrise).text = weather.sys.sunrise.toString()
+                            findViewById<TextView>(R.id.text_view_sunset).text = convertTime(weather.sys.sunset.toLong())
+                            findViewById<TextView>(R.id.text_view_sunrise).text = convertTime(weather.sys.sunrise.toLong())
                             findViewById<TextView>(R.id.text_view_status).text = weather.weather[i].description
                             findViewById<TextView>(R.id.text_view_address).text = weather.name
                             findViewById<TextView>(R.id.text_view_address).text = weather.name
-                            findViewById<TextView>(R.id.text_view_temp_max).text = weather.main.temp_max.toString()
-                            findViewById<TextView>(R.id.text_view_temp_min).text = weather.main.temp_max.toString()
-                            findViewById<TextView>(R.id.text_view_temp).text = weather.main.temp.toString()
+                            findViewById<TextView>(R.id.text_view_temp_max).text = weather.main.temp_max.toString() +" max"
+                            findViewById<TextView>(R.id.text_view_temp_min).text = weather.main.temp_max.toString() + " min"
+                            findViewById<TextView>(R.id.text_view_temp).text = weather.main.temp.toString() +"°C"
                             findViewById<TextView>(R.id.text_view_humidity).text = weather.main.humidity.toString()
                             findViewById<TextView>(R.id.text_view_pressure).text = weather.main.pressure.toString()
                             findViewById<TextView>(R.id.text_view_wind).text = weather.wind.speed.toString()
@@ -136,11 +138,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun convertTime(time: Long): String {
+        val date = Date(time * 1000L)
+        val timeFormatted = SimpleDateFormat("HH:mm", Locale.UK)
+        timeFormatted.timeZone = TimeZone.getDefault()
+        return timeFormatted.format(date)
+    }
+
     private fun isLocationEnabled(): Boolean {
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
+
 
     private fun requestPermissions() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(
